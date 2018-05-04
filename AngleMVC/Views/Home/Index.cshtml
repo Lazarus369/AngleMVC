@@ -1,0 +1,36 @@
+﻿@model AngleMVC.Models.Entry
+
+@{
+    ViewBag.Title = "Oblicz kąt";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Time, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">                
+                @Html.Label("Kąt:", new { @class = "control-label" })                
+                @Html.Label((string)ViewBag.Angle == null ? "" : (string)ViewBag.Angle, new { @class = "form-control" })            
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <button type="submit" name="button" class="btn btn-primary btn-lg" id="button">Oblicz kąt</button>               
+        </div>
+    </div>
+        
+}
+
+
+
+
+
